@@ -1,8 +1,11 @@
-export function App(){
+import { Button } from "./components/button"
 
-    return (
-        <div>
-            <h1>Hello World</h1>
-        </div>
-    )
+export function App() {
+  return (
+    <div>
+      <Button name="Criar" onClick={() => alert("Criar")} />
+      <Button name="Editar" />
+      <Button name="Remover" />
+    </div>
+  )
 }
