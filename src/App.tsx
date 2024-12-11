@@ -1,6 +1,6 @@
 import "./global.css"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 import { Button } from "./components/button"
 
@@ -11,15 +11,19 @@ import { useMessage } from "./hooks/useMessages"
 export function App() {
   const [count, setCount] = useState(0)
 
-  // const { show } = useMessage({ age: 25, name: "André Zambroni" })
+  const message = useMessage({ age: 25, name: "André Zambroni" })
 
   function handleAdd() {
-    setCount(count + 1)
+    setCount((prevState) => prevState + 1)
   }
 
   function handleRemove() {
-    setCount(count - 1)
+    setCount((prevState) => prevState - 1)
   }
+
+  useEffect(() => {
+    console.log("Componente montado")
+  }, [])
 
   return (
     <div className={styles.container}>
